@@ -11,3 +11,12 @@ while inserting_names == True:
         list_santa.append(name)
     else:
         inserting_names = False
+
+#Appends all list_santa names to list_chosen
+for name in list_santa:
+    list_chosen.append(name)
+
+random.shuffle(list_chosen)
+
+print(list_santa)
+print(list_chosen)
