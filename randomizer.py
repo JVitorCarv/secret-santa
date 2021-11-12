@@ -16,7 +16,15 @@ while inserting_names == True:
 for name in list_santa:
     list_chosen.append(name)
 
-random.shuffle(list_chosen)
+#Function that verifies if a santa is the same person as the one who'll be gifted
+def verifier(santa, chosen):
+    for i in range(len(santa)):
+        if santa[i] == chosen[i]:
+            return False
+    return True
 
-print(list_santa)
-print(list_chosen)
+#Generates a new random list_chosen while verification process is false
+is_valid = False
+while is_valid == False:
+    random.shuffle(list_chosen)
+    is_valid = verifier(list_santa, list_chosen)
